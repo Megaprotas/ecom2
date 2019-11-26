@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="form-background col-sm-12 col-md-6">
+            <p class="pass-urls">Back to log-in</p>
+            <p class="pass-link"><small><a style="color: orange" href="{% url 'login' %}">Sign In</a></small></p>
+        </div>
+        <div class="col-md-6 d-none d-sm-block" id="login-bground">
+            <h1 class="text-center city-name">New York</h1>
+        </div>
+    </div>
+</div>
+{% endblock %}

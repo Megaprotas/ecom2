@@ -1,0 +1,1 @@
+Just another approach to e-commerce. Project is unfinished yet and got a couple of errors

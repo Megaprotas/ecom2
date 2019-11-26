@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load bootstrap_tags %}
+
+{% block page-title %}{{object.name}}{% endblock %}
+{% block content %}
+<div class="container-fluid" style="background-color: #000d1a">
+    <div class="row">
+        <div class="col-sm-12 col-md-6" style="padding-top: 2%">
+            <div class="destination-image" style="background-image: url('{{ MEDIA_URL }}{{ destination.image.url }}')">
+                <p class="city-name2 text-center">{{ object.name }}</p>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6" style="padding-top: 2%">
+            <h1 class="text-center">Destination in details</h1>
+            <p class="text-justify">{{ object.description }}</p>
+            <p class="text-center register-reset">Price: {{ object.price }} EUR</p>
+            {% if object.discount_price == 0 %}
+                <p class="text-center" style="color: #ffffff">Let the Journey begin</p>
+            {% else %}
+                <p class="text-center" style="color: #ffffff"><span class="badge badge-success">You save</span> {{ object.discount_price }} EUR</p>
+            {% endif %}
+            <form class="destination-form" method='GET' action="{% url 'edit_cart' object.id %}">
+                <div class="input-group mb-3" style="width: 30%">
+                    <input type="number" class="form-control" name="qty" value="1" min="0">
+                    <div class="input-group-append">
+                        <input class="btn btn-secondary" style="width: 100%" type="submit" value="Add"/>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <hr>
+    </div>
+</div>
+<div class="d-none d-sm-block container-fluid" style="background-color: #000d1a">
+    <h3 class="text-center">Top Views:</h3>
+    <div class="row">
+        {% for filtered in filtered_destinations %}
+            <div class="top-picks col-md-4">
+                <div class="destination-image" style="background-image: url('{{ MEDIA_URL }}{{ filtered.image.url }}')">
+                    <p class="city-name2 text-center">{{ filtered.name }}</p>
+                    <p class="register-reset text-center">
+                        <strong><a style="color: orange" href="{% url 'destination' filtered.id %}">Read more</a></strong>
+                    </p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+<div class="container-fluid" style="background-color: #000000">
+    <div class="row">
+         <div class="col-sm-12">
+            <h1 class="footer-header text-center" style="color: #f8f8f8">Nightcrawlers</h1>
+         </div>
+    </div>
+</div>
+{% endblock %}

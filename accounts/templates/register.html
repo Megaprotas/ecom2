@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load bootstrap_tags %}
+
+{% block page-title %}Register{% endblock %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="form-background col-sm-12 col-md-6">
+            <form method="POST" style="margin-top: 15%">
+                {% csrf_token %}
+                {{ form | as_bootstrap }}
+                <div>
+                    <button class="btn btn-secondary" type="submit">Sign Up</button>
+                </div>
+            </form>
+            <p class="register-reset text-center"><small>Got an account? <a style="color: orange" href="{% url 'login' %}">Sign In</a></small>
+            <h1 class="register-login-h text-center">Register</h1>
+        </div>
+        <div class="col-md-6 d-none d-sm-block" id="register-bground">
+            <h1 class="text-center city-name">London</h1>
+        </div>
+    </div>
+</div>
+{% endblock %}

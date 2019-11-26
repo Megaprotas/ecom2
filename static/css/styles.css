@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css?family=Heebo:100&display=swap');
+
+html {
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, p, a, form {
+    font-family: 'Heebo', sans-serif;
+    color: #f8f8f8;
+}
+
+.title {
+    margin-top: 1%;
+    font-size: 40px;
+    letter-spacing: 2px;
+}
+
+.register-login-h {
+    color: #f8f8f8;
+}
+
+.title a {
+    color: #000000;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border 800ms ease;
+}
+
+.title a:hover {
+   border-bottom: 1px solid black;
+}
+
+.nav-link {
+    color: #000000;
+    letter-spacing: 1px;
+    margin-top: 2%;
+    margin-bottom: 5%;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border 800ms ease;
+}
+
+.nav-link:hover {
+    color: #000000;
+    border-bottom: 1px solid black;
+}
+
+#login-bground {
+    background-image: url('../nyc.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 0;
+    height: 84vh;
+    filter: brightness(75%);
+}
+
+#register-bground {
+    background-image: url('../london.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 0;
+    height: 84vh;
+    filter: brightness(75%);
+}
+
+#profile-bground {
+    background-image: url('../paris.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 0;
+    height: 84vh;
+    filter: brightness(75%);
+}
+
+#aboutus-bground {
+    background-image: url('../rio2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 0;
+    height: 84vh;
+    filter: brightness(75%);
+}
+
+.aboutus-title {
+    margin-top: 15%;
+    margin-bottom: 3%;
+}
+
+.aboutus-p {
+    line-height: 2em;
+}
+
+.profile-img {
+    margin-top: 1%;
+    border-radius: 50%;
+}
+
+.city-name {
+    position: relative;
+    margin-top: 35%;
+    letter-spacing: 8px;
+    color: #f8f8f8;
+    font-size: 100px;
+}
+
+.city-name2 {
+    padding-top: 18%;
+    letter-spacing: 3px;
+    color: #f8f8f8;
+    font-size: 50px;
+}
+
+.form-background {
+    background-color: #000d1a;
+}
+
+.destination-form {
+    margin-top: 1%;
+    margin-bottom: 3%;
+    margin-left: 38%;
+}
+
+form {
+    margin-top: 15%;
+    margin-left: 10%;
+    width: 80%;
+    text-align: center;
+    letter-spacing: 1px;
+    color: #f8f8f8;
+}
+
+form input {
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+hr {
+    border: 1px solid #f8f8f8;
+    margin-left: 10%;
+    width: 80%;
+}
+
+.pass-urls {
+    margin-top: 25%;
+    margin-left: 10%;
+    width: 80%;
+    text-align: center;
+    letter-spacing: 1px;
+    color: #f8f8f8;
+}
+
+.pass-link {
+    text-align: center;
+}
+
+.pass-link a {
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border 800ms ease;
+}
+
+.pass-link a:hover {
+    border-bottom: 1px solid #f8f8f8;
+}
+
+form ul li,
+.help-block {
+    display: none;
+}
+
+.register-reset {
+    color: #f8f8f8;
+}
+
+.register-reset a {
+    color: #f8f8f8;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border 800ms ease;
+}
+
+.register-reset a:hover {
+    border-bottom: 1px solid #f8f8f8;
+}
+
+.btn {
+    width: 30%;
+    letter-spacing: 1px;
+    margin-bottom: 2%;
+}
+
+.destination-image {
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(75%);
+}
+
+.top-picks {
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.paginator {
+    background-color: #000d1a;
+}
+
+.pagination {
+    margin-top: 1%;
+}
+
+.pagination-list a {
+    color: #f8f8f8;
+    margin-left: 20%;
+    margin-right: 20%;
+    text-decoration: none;
+    font-size: 25px;
+    font-family: 'Heebo', sans-serif;
+    transition: border 800ms ease;
+}
+
+.pagination-list a:hover {
+    border-bottom: 1px solid #f8f8f8;
+}
+
+.pagination-list span {
+    color: #f8f8f8;
+    margin-left: 20%;
+    margin-right: 20%;
+    text-decoration: none;
+    font-size: 25px;
+    font-family: 'Heebo', sans-serif;
+    color: orange;
+}
+
+td,
+th {
+    font-family: 'Heebo', sans-serif;
+}
+
+.footer-header {
+    margin-top: 3%;
+    margin-bottom: 3%;
+}

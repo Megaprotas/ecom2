@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load bootstrap_tags %}
+
+{% block page-title %}{{ user }}{% endblock %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="form-background col-sm-12 col-md-6">
+            <p class="profile-img register-reset text-center"><img class="profile-img" src="{{ user.profile.photo.url }}"></p>
+            <p class="register-reset text-center">User: {{ user.username }}</p>
+            <p class="register-reset text-center">Email: {{ user.email }}</p>
+            <hr>
+            <form style="margin-top: 2%"  method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ user_form | as_bootstrap }}
+                {{ profile_form | as_bootstrap }}
+                <button class="btn btn-secondary" type="submit">Update Profile</button>
+            </form>
+        </div>
+        <div class="col-md-6 d-none d-sm-block" id="profile-bground">
+            <h1 class="text-center city-name">Paris</h1>
+        </div>
+    </div>
+</div>
+{% endblock %}

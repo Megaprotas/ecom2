@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load bootstrap_tags %}
+
+{% block page-title %}Log-in{% endblock %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="form-background col-sm-12 col-md-6">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form | as_bootstrap }}
+                <button class="btn btn-secondary" type="submit">Sign In</button>
+            </form>
+            <p class="register-reset text-center">
+                <small>
+                    <a style="color: orange" href="{% url 'register' %}">Get an account</a> or
+                    <a style="color: orange" href="{% url 'password_reset' %}">Reset password?</a>
+                </small>
+            </p>
+            <h1 class="register-login-h text-center">Log-in</h1>
+        </div>
+        <div class="col-md-6 d-none d-sm-block" id="login-bground">
+            <h1 class="text-center city-name">New York</h1>
+        </div>
+    </div>
+</div>
+{% endblock %}

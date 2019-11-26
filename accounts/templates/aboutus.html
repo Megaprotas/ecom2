@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load bootstrap_tags %}
+
+{% block page-title %}About Us{% endblock %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="form-background col-sm-12 col-md-6">
+            {% for about in aboutus %}
+                <h2 class="aboutus-title register-reset text-center">{{ about.title }}</h2>
+                <p class="aboutus-p register-reset text-justify">{{ about.description }}</p>
+            {% endfor %}
+        </div>
+        <div class="col-md-6 d-none d-sm-block" id="aboutus-bground">
+            <h1 class="text-center city-name">Rio de Jeneiro</h1>
+        </div>
+    </div>
+</div>
+{% endblock %}

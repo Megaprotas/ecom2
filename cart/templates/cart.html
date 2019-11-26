@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load bootstrap_tags %}
+
+{% block content %}
+<div class="container-fluid" style="background-color: #000d1a">
+    <div class="row justify-content-center">
+        <div class="col-sm-12 col-md-10">
+            <h1 class="text-center" style="margin-top: 1%">Your Destinations:</h1>
+            {% if empty %}
+                <p class="text-center">Your cart is empty!</p>
+            {% else %}
+                <table class="table table-striped table-dark">
+                  <thead>
+                    <tr>
+                      <th class="text-center" scope="col">Destination</th>
+                      <th class="text-center" scope="col">Passengers</th>
+                      <th class="text-center" scope="col">Price</th>
+                      <th class="text-center" scope="col">Discount</th>
+                      <th class="text-center" scope="col">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  {% for item in cart.destcart_set.all %}
+                    <tr>
+                      <td class="text-center">{{ item.destination }}</td>
+                      <td class="text-center">{{ item.quantity }}</td>
+                      <td class="text-center">{{ item.destination.price }}</td>
+                      <td class="text-center">{{ item.destination.discount_price }}</td>
+                      <td class="text-center register-reset"><a style="color: orange" href="{% url 'edit_cart' item.destination.id %}?qty=0">Remove</a></td>
+                    </tr>
+                  {% endfor %}
+                  </tbody>
+                </table>
+                <p class="text-center">Total before discount: {{ cart.total_before_discount }}</p>
+                <p class="text-center">Total: {{ cart.total }}</p>
+                <p class="text-center" style="color: orange"><strong>You save: {{ cart.you_save }}</strong></p>
+                <p class="text-center" style="margin-bottom: 15%"><a class="btn btn-secondary" href="{% url 'checkout' %}">Checkout</a></p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+<div class="container-fluid" style="background-color: #000000">
+    <div class="row">
+         <div class="col-sm-12">
+            <h1 class="footer-header text-center" style="color: #f8f8f8">Nightcrawlers</h1>
+         </div>
+    </div>
+</div>
+{% endblock %}
